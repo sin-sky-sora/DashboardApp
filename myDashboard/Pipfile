@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 django = "*"
+django-3-jet = "*"
 
 [dev-packages]
 
