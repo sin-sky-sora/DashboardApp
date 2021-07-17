@@ -32,6 +32,8 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
+    'jet.dashboard',
+    'jet',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -126,3 +128,8 @@ STATICFILES_DIR = [os.path.join(BASE_DIR,"static")]
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# django-jet setting option change
+# From Django 3.0 the default value of the X_FRAME_OPTIONS setting was changed from SAMEORIGIN to DENY. This can cause errors for popups such as for the Field Lookup Popup. To solve this you should add the following to your.
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
