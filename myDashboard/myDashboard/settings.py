@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'dashApp',
 ]
 
+TAILWIND_APP_NAME = 'dashApp'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
