@@ -16,4 +16,4 @@ python_version = "3.9"
 [scripts]
 start = "python manage.py runserver"
 build = "python manage.py tailwind build"
-collect = " python manage.py collectstatic "
+collect = "python manage.py collectstaticd"
