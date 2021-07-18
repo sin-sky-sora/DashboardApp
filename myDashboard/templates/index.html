@@ -180,7 +180,31 @@
                         </div>
                       </td>
                     </tr>
-
+                    <tr class="text-gray-700">
+                      <th class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">Twitter</th>
+                      <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                        <a class="flex items-center font-medium text-blue-500 hover:text-blue-600" href="https://google.com" style="outline: none;">
+                          <span class="flex hover:border-b border-gray-400">
+                            <span>https://twitter.com</span>
+                            <span>
+                              <svg width="20" height="20" viewbox="0 0 20 20" fill="currentColor" class="transform transition-transform duration-500 ease-in-out">
+                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                              </svg>
+                            </span>
+                          </span>
+                        </a>
+                      </td>
+                      <td class="hidden border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                        <div class="flex items-center">
+                          <span class="mr-2">40%</span>
+                          <div class="relative w-full">
+                            <div class="overflow-hidden h-2 text-xs flex rounded bg-blue-200">
+                              <div style="width: 40%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -195,15 +219,15 @@
                 <div class="relative w-full max-w-full flex-grow flex-1">
                   <h3 class="font-semibold text-base text-gray-900">Salseforce Status</h3>
                 </div>
-                <div class="relative w-full max-w-full flex-grow flex-1 text-right">
+                <div class="hidden relative w-full max-w-full flex-grow flex-1 text-right">
                   <button class="bg-blue-500 text-white active:bg-blue-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button">See all</button>
                 </div>
               </div>
               <div class="block w-full">
                 <div class="px-4 bg-gray-100 text-gray-500 align-middle border border-solid border-gray-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                  Today
+                  Now Status
                 </div>
-                <ul class="my-1">
+                <ul class="my-1 hidden">
                   <li class="flex px-4">
                     <div class="w-9 h-9 rounded-full flex-shrink-0 bg-indigo-500 my-2 mr-3">
                       <svg class="w-9 h-9 fill-current text-indigo-50" viewBox="0 0 36 36"><path d="M18 10c-4.4 0-8 3.1-8 7s3.6 7 8 7h.6l5.4 2v-4.4c1.2-1.2 2-2.8 2-4.6 0-3.9-3.6-7-8-7zm4 10.8v2.3L18.9 22H18c-3.3 0-6-2.2-6-5s2.7-5 6-5 6 2.2 6 5c0 2.2-2 3.8-2 3.8z"></path></svg>
@@ -239,10 +263,26 @@
                     </div>
                   </li>
                 </ul>
+                <table class="items-center w-full bg-transparent border-collapse">
+                  <tbody>
+                    <tr class="text-gray-700 hover:bg-gray-300">
+                      <th class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">key</th>
+                      <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">AP10</td>
+                    </tr>
+                    <tr class="text-gray-700 hover:bg-gray-300">
+                      <th class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">status</th>
+                      <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">OK</td>
+                    </tr>
+                    <tr class="text-gray-700 hover:bg-gray-300">
+                      <th class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">maintenanceWindow</th>
+                      <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">Saturdays 15:00 - 19:00 UTC</td>
+                    </tr>
+                  </tbody>
+                </table>
                 <div class="px-4 bg-gray-100 text-gray-500 align-middle border border-solid border-gray-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                  Yesterday
+                  Mentenance Data
                 </div>
-                <ul class="my-1">
+                <ul class="my-1 hidden">
                   <li class="flex px-4">
                     <div class="w-9 h-9 rounded-full flex-shrink-0 bg-green-500 my-2 mr-3">
                       <svg class="w-9 h-9 fill-current text-light-blue-50" viewBox="0 0 36 36"><path d="M23 11v2.085c-2.841.401-4.41 2.462-5.8 4.315-1.449 1.932-2.7 3.6-5.2 3.6h-1v2h1c3.5 0 5.253-2.338 6.8-4.4 1.449-1.932 2.7-3.6 5.2-3.6h3l-4-4zM15.406 16.455c.066-.087.125-.162.194-.254.314-.419.656-.872 1.033-1.33C15.475 13.802 14.038 13 12 13h-1v2h1c1.471 0 2.505.586 3.406 1.455zM24 21c-1.471 0-2.505-.586-3.406-1.455-.066.087-.125.162-.194.254-.316.422-.656.873-1.028 1.328.959.878 2.108 1.573 3.628 1.788V25l4-4h-3z"></path></svg>
@@ -261,6 +301,42 @@
                     </div>
                   </li>
                 </ul>
+                <table class="items-center w-full bg-transparent border-collapse">
+                  <thead>
+                    <tr class="text-left bg-gray-200 border-b-2 text-normal">
+                      <th class="px-4 bg-gray-100 text-gray-500 align-middle border border-solid border-gray-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">Date</th>
+                      <th class="px-4 bg-gray-100 text-gray-500 align-middle border border-solid border-gray-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">Start Time</th>
+                      <th class="px-4 bg-gray-100 text-gray-500 align-middle border border-solid border-gray-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">Type</th>
+                      <th class="px-4 bg-gray-100 text-gray-500 align-middle border border-solid border-gray-200 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">Service</th>
+                  </thead>
+                  <tbody>
+                    <tr class="text-gray-700 hover:bg-gray-300">
+                      <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">2021/08/21</td>
+                      <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">23:00</td>
+                      <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">	Scheduled Maintenance</td>
+                      <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">Core Service</td>
+                    </tr>
+                    <tr class="text-gray-700 hover:bg-gray-300">
+                      <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">2021/08/21</td>
+                      <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">12:00</td>
+                      <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">Site Switch</td>
+                      <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">Core Service</td>
+                    </tr>
+                    <tr class="text-gray-700 hover:bg-gray-300">
+                      <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">2021/10/10</td>
+                      <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">01:00</td>
+                      <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">Release</td>
+                      <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">Core Service</td>
+                    </tr>
+                    <tr class="text-gray-700 hover:bg-gray-300">
+                      <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">2021/10/17</td>
+                      <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">12:00</td>
+                      <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">Scheduled Maintenance</td>
+                      <td class="border-t-0 px-4 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">Core Service</td>
+                    </tr>
+
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
@@ -270,13 +346,13 @@
         <!-- Task Summaries -->
         <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 p-4 gap-4 text-black">
           <div class="md:col-span-2 xl:col-span-3">
-            <h3 class="text-lg font-semibold">AWS Status</h3>
+            <h3 class="text-lg font-semibold"></h3>
           </div>
           {% include 'thousandeyes.html' %}
           <div class="md:col-span-2 xl:col-span-3">
             <div class="rounded bg-gray-200 p-3">
               <div class="flex justify-between py-1 text-black">
-                <h3 class="text-sm font-semibold">Tasks in DEVELOPMENT</h3>
+                <h3 class="text-sm font-semibold">AWS Status</h3>
                 <svg class="h-4 fill-current text-gray-600 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
                   <path d="M5 10a1.999 1.999 0 1 0 0 4 1.999 1.999 0 1 0 0-4zm7 0a1.999 1.999 0 1 0 0 4 1.999 1.999 0 1 0 0-4zm7 0a1.999 1.999 0 1 0 0 4 1.999 1.999 0 1 0 0-4z"/></svg>
               </div>
@@ -351,7 +427,7 @@
               </div>
             </div>
           </div>
-          <div>
+          <div class="hidden">
             <div class="rounded bg-gray-200 p-3">
               <div class="flex justify-between py-1 text-black">
                 <h3 class="text-sm font-semibold">Tasks in QA</h3>
@@ -379,7 +455,7 @@
         <!-- ./Task Summaries -->
 
         <!-- Client Table -->
-        <div class="mt-4 mx-4">
+        <div class="mt-4 mx-4 hidden">
           <div class="w-full overflow-hidden rounded-lg shadow-xs">
             <div class="w-full overflow-x-auto">
               <table class="w-full">
@@ -541,7 +617,7 @@
         <!-- ./Client Table -->
 
         <!-- Contact Form -->
-        <div class="mt-8 mx-4">
+        <div class="mt-8 mx-4 hidden">
           <div class="grid grid-cols-1 md:grid-cols-2">
             <div class="p-6 mr-2 bg-gray-100 sm:rounded-lg">
               <h1 class="text-4xl sm:text-5xl text-gray-800 font-extrabold tracking-tight">Get in touch</h1>
@@ -592,7 +668,7 @@
         <!-- ./Contact Form -->
 
         <!-- External resources -->
-        <div class="mt-8 mx-4">
+        <div class="mt-8 mx-4 hidden">
           <div class="p-4 bg-blue-50 border border-blue-500 rounded-lg shadow-md">
             <h4 class="text-lg font-semibold">Have taken ideas & reused components from the following resources:</h4>
             <ul>
