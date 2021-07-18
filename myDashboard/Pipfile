@@ -14,7 +14,7 @@ django-tailwind = "*"
 python_version = "3.9"
 
 [scripts]
-start = "python manage.py runserver"
+start = "python manage.py runserver 0.0.0.0:8000"
 devstart = "python manage.py tailwind start"
 build = "python manage.py tailwind build"
 collect = "python manage.py collectstaticd"

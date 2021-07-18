@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  node:
+  dashboard:
     build: .
     working_dir: /app
     volumes:
@@ -9,3 +9,4 @@ services:
     ports:
       - "8000:8000"
     tty: true
+    command: python manage.py runserver 0.0.0.0:8000
