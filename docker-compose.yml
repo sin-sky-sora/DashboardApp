@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  node:
+    build: .
+    working_dir: /app
+    volumes:
+      - ./myDashboard:/app
+    ports:
+      - "8000:8000"
+    tty: true
