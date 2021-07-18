@@ -7,6 +7,9 @@ name = "pypi"
 django = "*"
 django-3-jet = "*"
 django-tailwind = "*"
+requests = "*"
+bs4 = "*"
+bs2json = "*"
 
 [dev-packages]
 
