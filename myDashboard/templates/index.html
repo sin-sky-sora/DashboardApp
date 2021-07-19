@@ -22,6 +22,7 @@
 {% endblock headStyle %}
 
 {% block headScript %}
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script>
     window.onload = function(){
       const active = document.querySelector("#nav .active");
@@ -365,40 +366,57 @@
                     <th class="px-4 py-3">Update Time</th>
                   </tr>
                 </thead>
-                <tbody class="bg-white divide-y">
-                  <tr class="bg-gray-50 hover:bg-gray-100 text-gray-700">
-                    <td class="px-4 py-3">&lt;![CDATA[Amazon API Gateway (Tokyo) Service Status]]&gt;</td>
-                    <td class="px-4 py-3">&lt;![CDATA[Amazon API Gateway (Tokyo) Service Status]]&gt;</td>
-                    <td class="px-4 py-3">
-                      <time>2021/07/17 16:05:32</time>
-                      <!-- new Date("Sat, 17 Jul 2021 00:05:32 PDT") -->
-                    </td>
-                    <td class="px-4 py-3">
-                      <time>2021/07/18 10:05</time>
-                    </td>
-                  </tr>
-                  <tr class="bg-gray-50 hover:bg-gray-100 text-gray-700">
-                    <td class="px-4 py-3">&lt;![CDATA[AWS Config (Tokyo) Service Status]]&gt;</td>
-                    <td class="px-4 py-3">&lt;![CDATA[AWS Config (Tokyo) Service Status]]&gt;</td>
-                    <td class="px-4 py-3">
-                      <time>2021/07/17 16:05:29</time>
-                    </td>
-                    <td class="px-4 py-3">
-                      <time>2021/07/18 10:05</time>
-                    </td>
-                  </tr>
-                  <tr class="bg-gray-50 hover:bg-gray-100 text-gray-700">
-                    <td class="px-4 py-3">&lt;![CDATA[AWS Data Pipeline (Tokyo) Service Status]]&gt;</td>
-                    <td class="px-4 py-3">&lt;![CDATA[AWS Data Pipeline (Tokyo) Service Status]]&gt;</td>
-                    <td class="px-4 py-3">
-                      <time>2021/07/17 16:05:32</time>
-                    </td>
-                    <td class="px-4 py-3">
-                      <time>2021/07/18 10:05</time>
-                    </td>
-                  </tr>
+                <tbody class="bg-white divide-y" id="rss-aws-tablebody">
+                  <template id="rss-aws-template">
+                    <tr class="bg-gray-50 hover:bg-gray-100 text-gray-700">
+                      <td class="px-4 py-3 title"></td>
+                      <td class="px-4 py-3 description"></td>
+                      <td class="px-4 py-3 lastbuilddate">
+                        <time></time>
+                        <!-- new Date("Sat, 17 Jul 2021 00:05:32 PDT") -->
+                      </td>
+                      <td class="px-4 py-3 updatetime">
+                        <time></time>
+                      </td>
+                    </tr>
+                  </template>
                 </tbody>
               </table>
+              <script>
+                (function(){
+                  function formatDate (date, format) {
+                    format = format.replace(/yyyy/g, date.getFullYear());
+                    format = format.replace(/MM/g, ('0' + (date.getMonth() + 1)).slice(-2));
+                    format = format.replace(/dd/g, ('0' + date.getDate()).slice(-2));
+                    format = format.replace(/HH/g, ('0' + date.getHours()).slice(-2));
+                    format = format.replace(/mm/g, ('0' + date.getMinutes()).slice(-2));
+                    format = format.replace(/ss/g, ('0' + date.getSeconds()).slice(-2));
+                    format = format.replace(/SSS/g, ('00' + date.getMilliseconds()).slice(-3));
+                    return format;
+                  };
+                  const dateFormatTemplate = "yyyy/MM/dd HH:mm:ss";
+                  const get_urls = [
+                    "https://status.aws.amazon.com/rss/apigateway-ap-northeast-1.rss",
+                    "https://status.aws.amazon.com/rss/appflow-ap-northeast-1.rss",
+                    "https://status.aws.amazon.com/rss/appstream2-ap-northeast-1.rss",
+                    "https://status.aws.amazon.com/rss/athena-ap-northeast-1.rss"
+                  ];
+                  for(let item of get_urls){
+                    axios.get("{% url 'aws' %}" + "?url=" + item).then(function(res){
+                      const content = document.getElementById("rss-aws-template").content;
+                      const fragment = document.createDocumentFragment();
+                      const responseData = res.data.channel;
+                      const clone = document.importNode(content, true);
+                      clone.querySelector(".title").textContent = responseData.title.text;
+                      clone.querySelector(".description").textContent = responseData.description.text;
+                      clone.querySelector(".lastbuilddate time").textContent = formatDate(new Date(responseData.lastbuilddate.text),dateFormatTemplate);
+                      clone.querySelector(".updatetime time").textContent = formatDate(new Date(),dateFormatTemplate);
+                      fragment.appendChild(clone);
+                      document.querySelector('#rss-aws-tablebody').appendChild(fragment);
+                    });
+                  }
+                }());
+              </script>
               <div class="text-sm text-black mt-2 hidden">
                 <div class="bg-white hover:bg-gray-50 p-2 rounded mt-1 border-b border-gray-100 cursor-pointer">Delete all references from the wiki</div>
                 <div class="bg-white hover:bg-gray-50 p-2 rounded mt-1 border-b border-gray-100 cursor-pointer">Remove analytics code</div>
