@@ -11,7 +11,9 @@ def top(request):
 
 def get_aws_rss(request) -> JsonResponse:
     url =  request.GET["url"] if request.GET["url"] else None
-    if url is None:
+    print(url)
+    print(request.GET["url"])
+    if url is not None:
         response = requests.get(url)
         if response.status_code == 200:
             soup = bs(response.text,"html.parser")
